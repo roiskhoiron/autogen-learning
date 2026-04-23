@@ -11,7 +11,13 @@ def get_model_client():
         raise ValueError("GEMINI_API_KEY not found in .env file.")
     
     return OpenAIChatCompletionClient(
-        model="gemini-2.0-flash",
+        model="Torcons",
         api_key=api_key,
-        base_url="https://generativelanguage.googleapis.com/v1beta/openai/"
+        base_url="https://chat.torcons.ai/api/",
+        model_info={
+            "vision": True,
+            "function_calling": True,
+            "json_output": True,
+            "family": "unknown",
+        }
     )
